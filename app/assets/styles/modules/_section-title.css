@@ -10,7 +10,8 @@
   strong {
     font-weight: 500;
   }
-  &--blue{
+
+  &--blue {
     color: $mainBlue;
   }
 
@@ -28,6 +29,6 @@
       margin-bottom: 0;
       display: inline-block;
     }
-
   }
+
 }
