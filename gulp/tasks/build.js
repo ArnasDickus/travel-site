@@ -4,9 +4,12 @@ del = require('del'),
 usemin = require('gulp-usemin'),
 rev = require('gulp-rev'),
 cssnano = require('gulp-cssnano'),
-uglify = require('gulp-uglify');
+uglify = require('gulp-uglify'),
 browserSync = require('browser-sync').create();
 
+
+
+// Preview Distribution folder files.
 gulp.task('previewDist', function(){
   browserSync.init({
     notify: false,
@@ -16,10 +19,12 @@ gulp.task('previewDist', function(){
   });
 });
 
+// Deleting dist folder. So that files be new.
 gulp.task('deleteDistFolder',['icons'], function(){
   return del('./docs')
 });
 
+// Copy all general files like wordpress, or others. unknown to the project.
 gulp.task('copyGeneralFiles', ['deleteDistFolder'], function(){
   var pathsToCopy = [
     './app/**/*',
@@ -29,13 +34,14 @@ gulp.task('copyGeneralFiles', ['deleteDistFolder'], function(){
     '!./app/assets/scripts/**',
     '!./app/temp',
     '!./app/temp/**'
-
   ];
 
   return gulp.src(pathsToCopy)
     .pipe(gulp.dest("./docs"));
 });
 
+// gulp-imagemin. Compress images
+// https://github.com/sindresorhus/gulp-imagemin
 gulp.task('optimizeImages',['deleteDistFolder',], function(){
   return gulp.src(['./app/assets/images/**/*',
    '!./app/assets/images/icons',
@@ -47,7 +53,7 @@ gulp.task('optimizeImages',['deleteDistFolder',], function(){
     }))
     .pipe(gulp.dest('./docs/assets/images'));
 });
-
+// TODO gulp usemin is depreacated need to use browserify or webpack
   gulp.task('useminTrigger' , ['deleteDistFolder'], function(){
     gulp.start("usemin");
   });
@@ -61,4 +67,5 @@ gulp.task('usemin', ['styles', 'scripts'], function(){
     .pipe(gulp.dest("./docs"));
 });
 
-gulp.task('build', ['deleteDistFolder','copyGeneralFiles','optimizeImages', 'useminTrigger']);
+
+gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles','optimizeImages', 'useminTrigger']);
