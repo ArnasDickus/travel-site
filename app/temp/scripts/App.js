@@ -96,6 +96,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _modules_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
+/* harmony import */ var _modules_Copyright__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8);
+
 
 
 
@@ -105,7 +107,7 @@ var mobileMenu = new _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0__["default"]
 new _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_1__["default"](jquery__WEBPACK_IMPORTED_MODULE_3___default()(".feature-item"), "85%");
 new _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_1__["default"](jquery__WEBPACK_IMPORTED_MODULE_3___default()(".testimonial"), "60%");
 var stickyHeader = new _modules_StickyHeader__WEBPACK_IMPORTED_MODULE_2__["default"]();
-var modal = new _modules_Modal__WEBPACK_IMPORTED_MODULE_4__["default"]();
+var copyright = new _modules_Copyright__WEBPACK_IMPORTED_MODULE_5__["default"]();
 
 /***/ }),
 /* 1 */
@@ -11761,6 +11763,45 @@ function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (Modal);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Copyright =
+/*#__PURE__*/
+function () {
+  function Copyright() {
+    _classCallCheck(this, Copyright);
+
+    this.newYear();
+    this.year = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#year");
+  }
+
+  _createClass(Copyright, [{
+    key: "newYear",
+    value: function newYear() {
+      // this.year.text(new Date().getFullYear());
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#year').text(new Date().getFullYear());
+    }
+  }]);
+
+  return Copyright;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Copyright);
 
 /***/ })
 /******/ ]);
