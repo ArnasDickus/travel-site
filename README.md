@@ -2,7 +2,7 @@
 
 Travel-site created with the help of udemy Git a Web Developer Job: Mastering the Modern Workflow.
 
-Live version [here](http://www.itarnas.lt/).
+Live version [here](https://arnasdickus.github.io/travel-site/).
 
 ## Getting Started
 
